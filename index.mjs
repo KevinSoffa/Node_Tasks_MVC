@@ -4,6 +4,9 @@ import express from 'express';
 // Models
 import Task from './models/Task.mjs';
 
+// Routes
+import tasksRoutes from './routes/tasksRoutes.mjs'
+
 
 const app = express();
 
@@ -20,6 +23,9 @@ app.set('view engine', 'handlebars');
 
 // Ponte para os arquivos estáticos
 app.use(express.static('public'));
+
+// Rotas Tasks
+app.use('/tasks', tasksRoutes)
 
 conn
     .sync()

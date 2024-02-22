@@ -26,4 +26,13 @@ export default class TaskController{
 
         res.render('tasks/all', {tasks})
     }
+
+    // Deletando tarefa [DELETE]
+    static async removeTask(req, res) {
+        // capturando id
+        const id = req.body.id
+        await Task.destroy({where: {id: id}})
+
+        res.redirect('/tasks')
+    }
 }

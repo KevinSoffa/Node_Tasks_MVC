@@ -11,4 +11,7 @@ router.get('/', TaskController.showTasks)
 router.post('/add', TaskController.createTaskSave)
 router.get('/add', TaskController.createTask)
 
+// Rota delete
+router.post('/remove', TaskController.removeTask)
+
 export default router;

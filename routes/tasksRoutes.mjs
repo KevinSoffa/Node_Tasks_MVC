@@ -4,7 +4,7 @@ import express from 'express';
 
 const router = express.Router()
 
-//Rotas
+//Rota get
 router.get('/', TaskController.showTasks)
 
 //Rota add
@@ -17,6 +17,7 @@ router.post('/remove', TaskController.removeTask)
 // Rota update
 router.get('/edit/:id', TaskController.updateTask)
 router.post('/edit', TaskController.updateTaskPost)
+router.post('/updatestatus', TaskController.toggleTaskStatus)
 
 
 export default router;
